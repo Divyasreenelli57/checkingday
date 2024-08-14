@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Day of Date</title>
+</head>
+<body>
+
+<h2>Check Day of Date</h2>
+
+<form id="dateForm">
+  <label for="dateInput">Enter a date:</label>
+  <input type="date" id="dateInput" name="dateInput">
+  <button type="button" onclick="checkDay()">Check Day</button>
+</form>
+
+<p id="dayOutput"></p>
+
+<script>
+function checkDay() {
+  // Get the input value
+  var dateInput = document.getElementById("dateInput").value;
+  
+  // Create a Date object from the input value
+  var date = new Date(dateInput);
+  
+  // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+  var dayOfWeek = date.getDay();
+  
+  // Array to map day index to day name
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  
+  // Output the day of the week
+  document.getElementById("dayOutput").innerHTML = "The day of the date is: " + days[dayOfWeek];
+}
+</script>
+
+</body>
+</html>
